@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<p id="metin">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis aut accusantium unde officia vitae velit reiciendis non cum nobis ratione. Unde recusandae dicta nobis vel suscipit magni repudiandae, nulla blanditiis.
+</p>
+    <script>
+        
+        var kelimeler;
+        var paragraf;
+        (
+        function kelime_s() 
+        {
+           paragraf = document.querySelector("#metin").textContent;
+           console.log(paragraf);
+           kelimeler = new Array();
+           kelimeler = paragraf.split(" ");          
+           console.log(kelimeler.length);
+        })();
+
+        function harf()
+        {
+            var kelim;
+            let harf5;            
+            for (let index = 0; index < kelimeler.length; index++) 
+            {
+                kelim = kelimeler[index];
+                harf5 = kelim[kelim.length-1];
+                if (kelim.length == 5 || kelim.length == 6) 
+                {          
+                        if ((harf5 != ".") && (harf5 != ",")) 
+                        {
+                            document.writeln("<font color='red'>"+kelim+"</font>");
+                        }
+                        else if (harf5 != ",")
+                        {
+                            document.writeln(kelim);  
+                        }
+                        if(kelim.length == 6)
+                        {
+                            document.writeln("<font color='red'>"+kelim[0],kelim[1],kelim[2],kelim[3],kelim[4]+"</font>"+kelim[5]+"");
+                        }                   
+                }  
+                else
+                {
+                    document.writeln(kelim);
+                }                      
+            }           
+        
+        }
+        harf();
+        
+    </script>
+</body>
+</html>
+</html>
