@@ -39,7 +39,7 @@ todoEkle.onclick = function(e){
         a.appendChild(i);
         listGroup.appendChild(newElement);
     }
-    
+
     console.log(newElement);
     e.preventDefault();
 }
@@ -56,5 +56,11 @@ function sil(e)
     } 
 }
 
-// 
+// Tüm Taskları Silme
+
+var tumSil = document.querySelector("#clear-todos");
+
+tumSil.addEventListener("click",function(e){
+    listGroup.textContent="";
+});
 
