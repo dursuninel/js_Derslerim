@@ -39,19 +39,17 @@ nextBtn.onclick=function()
         option = document.createElement("option");
         option.appendChild(document.createTextNode("Bayan"));
         select.appendChild(option);
-        
-        degis.remove();
-        form.insertBefore(select,form.children[2])
-        
+        form.children[2].textContent="Cinsiyet";
+        form.children[2].appendChild(select);        
     }
     else if (sayac == 2)
     {
         label[0].textContent="Mail";
         label[1].textContent="Telefon";
     }
-    else if (sayac == 3)
-    {
-        label[0].textContent="Mail";
-        label[1].textContent="Telefon";
-    }
+    // else if (sayac == 3)
+    // {
+    //     label[0].textContent="Mail";
+    //     label[1].textContent="Telefon";
+    // }
 }

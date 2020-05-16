@@ -41,6 +41,7 @@ todoEkle.onclick = function(e){
     }
 
     console.log(newElement);
+
     e.preventDefault();
 }
 
