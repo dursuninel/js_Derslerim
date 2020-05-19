@@ -6,44 +6,34 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="soru1.css">
 </head>
 <body>
-
 <div class="container">
-    <div>
-        <form id="form"> 
-            <div class="form-group">
-              <label>Ad</label>
-              <input type="text" id="in1" class="col-xl-3 col-lg-3 form-control">
-            </div>
-            <div class="form-group">
-              <label>Soyad</label>
-              <input type="text" id="in2" class="col-xl-3 col-lg-3 form-control">
-            </div>
-            <div class="form-group">
-                <label id="l">Yaş</label>
-                <input type="text" id="in3" class="col-xl-3 col-lg-3 form-control">
-              </div>
-            <input type="button" id="nextBtn" value="Devam" class="btn btn-primary">
-            
-          </form>
-          <div class="container mt-5 col-xl-4">
-            <div id="stepProgressBar">
-                <div class="step">
-                    <div class="bullet">1</div>
-                </div>
-                <div class="step">
-                    <div class="bullet">2</div>
-                </div>
-                <div class="step">
-                    <div class="bullet">3</div>
-                </div>
-            </div>
-            
-            </div>
-    </div>
+    <form id="form" class="col-xl-6">
+        <h5 class="display-4 text-danger text-center mb-3">Kayıt Formu</h5>
+        <div class="form-group">
+          <label >Ad</label>
+          <input type="text" class="form-control" id="ad">
+        </div>
+        <div class="form-group">
+          <label >Soyad</label>
+          <input type="text" class="form-control" id="soyad">
+        </div>
+        <div class="form-group">
+            <label >Cinsiyet</label>
+            <select class="form-control" id="cins">
+                <option>Erkek</option>
+                <option>Kadın</option>
+              </select>
+          </div>
+        
+        
+        <button id="pre" class="btn btn-danger">geri</button>
+        <button id="next" class="btn btn-primary">ileri</button>
+        <button id="kayıt" class="btn btn-success">Kayıt et</button>
+      </form>
 </div>
+    
 
     
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
