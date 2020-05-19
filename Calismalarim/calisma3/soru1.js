@@ -116,12 +116,14 @@ var deger3;
                 form.children[1].children[0].textContent="Ad";
                 in1=document.createElement("input");
                 in1.type="text";
+                in1.value=deger1;
                 in1.className="form-control";
                 in1.id="ad";
 
                 form.children[2].children[0].textContent="Soyad";
                 in2=document.createElement("input");
                 in2.type="text";
+                in2.value=deger2;
                 in2.className="form-control";
                 in2.id="soyad";
 
@@ -134,7 +136,9 @@ var deger3;
                 in3.appendChild(icElement);
                 icElement = document.createElement("option");
                 icElement.textContent="Kadın";
+                in3.value=deger3;
                 in3.appendChild(icElement);
+                
 
                 form.children[1].children[1].remove();
                 form.children[2].children[1].remove();
