@@ -76,6 +76,9 @@ var deger3;
                         in3.style.borderColor="red";
                         uyari.appendChild(document.createTextNode("Şifreler Eşleşmiyor"));
                         form.children[3].insertBefore(uyari,kontrol); 
+                        setTimeout(function(){   
+                            uyari.remove();
+                        }, 2000);
                     }
                     else
                     {
@@ -86,7 +89,10 @@ var deger3;
                         in2.style.borderColor="green";
                         in3.style.borderColor="green";
                         uyari.appendChild(document.createTextNode("Şifreler Eşleşiyor"));
-                        form.children[3].insertBefore(uyari,kontrol);   
+                        form.children[3].insertBefore(uyari,kontrol); 
+                        setTimeout(function(){   
+                            uyari.remove();
+                        }, 2000);  
                     }
                     e.preventDefault();
                 }
