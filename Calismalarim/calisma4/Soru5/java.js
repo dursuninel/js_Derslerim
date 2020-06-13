@@ -14,9 +14,11 @@ for(let value in maaslar)
 
 console.log(dizi);
 
-// dizi içindeki en yüksek sayıyı buldum
+// Destructin ile dizinin ilk değerini max a eşitledim
 
-var max = dizi[0];
+var [max] = dizi;
+
+// dizi içindeki en yüksek sayıyı buldum
 for (let index = 0; index < dizi.length; index++)
 {
     if (max < dizi[index])  
