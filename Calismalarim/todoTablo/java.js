@@ -1,67 +1,56 @@
-var todo; 
+//Element Seçme
+const todo = document.querySelector("#todo");
+const addTodo = document.querySelector("#todo-form").children[1];
+const form = document.querySelector("#todo-form");
+const filter = document.querySelector("#filter");
+const todoList = document.querySelector(".list-group");
+const clearTodos = document.querySelector("#clear-todos");
 
-var todoEkle = document.querySelector(".btn.btn-danger");
-var listGroup = document.querySelector(".list-group");
-{/* <li class="list-group-item d-flex justify-content-between">
-          Todo 4
-     <a href = "#" class ="delete-item">
-      <i class = "fa fa-remove"></i>
-     </a>
-        
-</li> */}
-
-
-// Todo Oluşturma
-
-var newElement;
-var a;
-var i;
-todoEkle.onclick = function(e){
-    console.log("Todo Eklendi");
-    
-    newElement=document.createElement("li");
-    newElement.className="list-group-item d-flex justify-content-between";
-    
-    a = document.createElement("a");
-    a.href = "#";
-    a.className = "delete-item";
-
-    
-    i = document.createElement("i");
-    i.className = "fa fa-remove";
-    a.appendChild(i);
-    todo = document.querySelector("#todo").value;
-
-    if (todo != "")
+// Task ekleme
+addTodo.addEventListener("click",function(e){
+    let element;
+    element = document.createElement("li");
+    element.classList = "list-group-item d-flex justify-content-between";
+    element.textContent = todo.value;
+    var icElement = document.createElement("a");
+    icElement.href = "#";
+    icElement.classList = "delete-item";
+    element.appendChild(icElement);
+    icElement = document.createElement("i");
+    icElement.classList = "fa fa-remove";
+    element.children[0].appendChild(icElement);
+    todoList.appendChild(element);
+    e.preventDefault();
+});
+// Seçili taskı silme
+todoList.addEventListener("click",function(e){
+    if (e.target.classList == "fa fa-remove") 
     {
-        newElement.appendChild(document.createTextNode(todo));
-        newElement.appendChild(a);
-        a.appendChild(i);
-        listGroup.appendChild(newElement);
+        e.target.parentElement.parentElement.remove();
+        console.log("Silindi");    
+        e.preventDefault();
     }
-
-    console.log(newElement);
+});
+// Tüm taskları Silme
+clearTodos.addEventListener("click",function(e){
+    todoList.textContent = "";
 
     e.preventDefault();
-}
-
-// Todo Silme
-
-listGroup.addEventListener("mousedown",sil);
-
-function sil(e)
-{  
-    if (e.target.className == "fa fa-remove") 
-    {
-     e.target.parentElement.parentElement.remove();
-    } 
-}
-
-// Tüm Taskları Silme
-
-var tumSil = document.querySelector("#clear-todos");
-
-tumSil.addEventListener("click",function(e){
-    listGroup.textContent="";
 });
 
+filter.addEventListener("keyup",function(e){
+    const filterValue = e.target.value.toLowerCase();
+    const listItems = document.querySelectorAll(".list-group-item");
+    
+    listItems.forEach(function(listItem){
+        const text = listItem.textContent.toLowerCase();
+        if(text.indexOf(filterValue) === -1)
+        {
+            listItem.setAttribute("style","display : none !Important")
+        }
+        else {
+            listItem.setAttribute("style","display : block");
+        }
+    });
+
+});
